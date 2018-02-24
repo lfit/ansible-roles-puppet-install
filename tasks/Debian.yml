@@ -1,0 +1,21 @@
+---
+- name: Purge puppet
+  apt:
+    name:
+      - puppet
+      - puppet-common
+    state: absent
+    purge: true
+  become: true
+
+- name: Install puppetlabs-release-pc1
+  apt:
+    deb: https://apt.puppetlabs.com/puppetlabs-release-pc1-xenial.deb
+  become: true
+
+- name: Install puppet-agent
+  apt:
+    name: puppet-agent
+    state: present
+    update_cache: true
+  become: true

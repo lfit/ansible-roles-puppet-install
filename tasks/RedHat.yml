@@ -1,0 +1,13 @@
+---
+- name: Install puppetlabs-release-pc1
+  yum:
+    name: https://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm
+    state: present
+  become: true
+
+- name: Install puppet-agent
+  yum:
+    name: puppet-agent
+    state: present
+    update_cache: true
+  become: true
