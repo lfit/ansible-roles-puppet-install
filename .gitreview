@@ -1,0 +1,5 @@
+[gerrit]
+host=gerrit.linuxfoundation.org
+port=29418
+project=ansible/roles/puppet-install.git
+defaultbranch=master
