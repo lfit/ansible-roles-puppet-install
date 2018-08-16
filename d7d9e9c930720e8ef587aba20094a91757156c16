@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "ce4e2bfb_a201cd01",
+        "filename": "tasks/Debian-aarch64.yml",
+        "patchSetId": 4
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-08-16T20:37:20Z",
+      "side": 1,
+      "message": "If it\u0027s acceptable for all architectures then why are we not installing from this repo in the next task below?",
+      "parentUuid": "157e22cc_c033874b",
+      "revId": "d7d9e9c930720e8ef587aba20094a91757156c16",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5137bf89_80e7f953",
         "filename": "tasks/Debian-aarch64.yml",
         "patchSetId": 4
