@@ -1,0 +1,14 @@
+---
+- name: Purge puppet
+  apt:
+    name:
+      - puppet
+      - puppet-common
+    state: absent
+    purge: true
+  become: true
+
+- name: Install puppet-agent
+  apt:
+    deb: http://launchpadlibrarian.net/248366163/puppet_3.8.5-2_all.deb
+  become: true
