@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3451a847_642f7a77",
+        "filename": "tasks/Debian-aarch64.yml",
+        "patchSetId": 4
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-08-16T19:54:00Z",
+      "side": 1,
+      "message": "Isn\u0027t this the same link used by x86 Ubuntu?\n\nAre these packages really for ARM?",
+      "revId": "d7d9e9c930720e8ef587aba20094a91757156c16",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
