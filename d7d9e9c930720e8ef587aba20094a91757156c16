@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "157e22cc_c033874b",
+        "filename": "tasks/Debian-aarch64.yml",
+        "patchSetId": 4
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-08-16T20:28:20Z",
+      "side": 1,
+      "message": "Would this be more suitable?\nhttps://packages.ubuntu.com/bionic/puppet-module-puppetlabs-apt\n\nFor sure we should be using bionic since we are in 18.04\n\nLooks like that package also is suitable for all architectures looking by the filters:\nhttps://packages.ubuntu.com/search?suite\u003ddefault\u0026arch\u003darm64\u0026searchon\u003dnames\u0026keywords\u003dpuppetlabs",
+      "parentUuid": "3451a847_642f7a77",
+      "revId": "d7d9e9c930720e8ef587aba20094a91757156c16",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5137bf89_80e7f953",
         "filename": "tasks/Debian-aarch64.yml",
         "patchSetId": 4
