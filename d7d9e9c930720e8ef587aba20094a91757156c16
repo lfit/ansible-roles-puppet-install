@@ -16,6 +16,29 @@
       "revId": "d7d9e9c930720e8ef587aba20094a91757156c16",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5137bf89_80e7f953",
+        "filename": "tasks/Debian-aarch64.yml",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-08-16T20:01:01Z",
+      "side": 1,
+      "message": "Is this puppet-agent, or is it all of puppet? looks like all to me.",
+      "range": {
+        "startLine": 18,
+        "startChar": 49,
+        "endLine": 18,
+        "endChar": 71
+      },
+      "revId": "d7d9e9c930720e8ef587aba20094a91757156c16",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
