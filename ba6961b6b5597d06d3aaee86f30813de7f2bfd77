@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ea4e11c_c78e31b1",
+        "filename": "tasks/main.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2018-08-16T19:39:43Z",
+      "side": 1,
+      "message": "yml instead of yaml?",
+      "revId": "ba6961b6b5597d06d3aaee86f30813de7f2bfd77",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
