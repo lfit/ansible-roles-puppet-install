@@ -9,6 +9,7 @@
     src: /opt/puppetlabs/bin/facter
     dest: /usr/bin/facter
     state: link
+  when: ansible_architecture != 'aarch64'
   become: true
 
 - name: Symlink puppet
@@ -16,4 +17,5 @@
     src: /opt/puppetlabs/puppet/bin/facter
     dest: /usr/bin/puppet
     state: link
+  when: ansible_architecture != 'aarch64'
   become: true
