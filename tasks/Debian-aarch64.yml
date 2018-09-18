@@ -1,0 +1,7 @@
+---
+- name: Install Facter
+  apt:
+    name: facter
+    state: present
+    update_cache: true
+  become: true
