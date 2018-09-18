@@ -1,4 +1,10 @@
 ---
+- include_tasks: '{{item}}'
+  with_first_found:
+    - '{{ansible_os_family}}-{{ansible_architecture}}.yml'
+    - '{{ansible_distribution}}.yml'
+    - '{{ansible_os_family}}.yml'
+
 - name: Install Puppet
   include_tasks: '{{item}}'
   with_first_found:
@@ -9,6 +15,7 @@
     src: /opt/puppetlabs/bin/facter
     dest: /usr/bin/facter
     state: link
+  when: ansible_architecture != 'aarch64'
   become: true
 
 - name: Symlink puppet
@@ -16,4 +23,5 @@
     src: /opt/puppetlabs/puppet/bin/facter
     dest: /usr/bin/puppet
     state: link
+  when: ansible_architecture != 'aarch64'
   become: true
