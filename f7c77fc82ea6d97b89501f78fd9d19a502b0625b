@@ -1,0 +1,7 @@
+Verified+1: Jenkins CI <releng+lf-jenkins@linuxfoundation.org>
+Code-Review+2: Thanh Ha (zxiiro) <thanh.ha@linuxfoundation.org>
+Submitted-by: Thanh Ha (zxiiro) <thanh.ha@linuxfoundation.org>
+Submitted-at: Fri, 01 Mar 2019 19:34:15 +0000
+Reviewed-on: https://gerrit.linuxfoundation.org/infra/14744
+Project: ansible/roles/puppet-install
+Branch: refs/heads/master
