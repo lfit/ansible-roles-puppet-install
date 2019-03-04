@@ -10,6 +10,8 @@ platforms:
     image: centos:7
   - name: ubuntu1604
     image: ubuntu:16.04
+  - name: ubuntu1804
+    image: ubuntu:18.04
 provisioner:
   name: ansible
   lint:
