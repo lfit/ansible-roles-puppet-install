@@ -10,10 +10,8 @@
     src: /opt/puppetlabs/bin/facter
     dest: /usr/bin/facter
     state: link
-  when:
-    - ansible_architecture != 'aarch64'
-    - ansible_distribution == 'Ubuntu'
-    - ansible_distribution_version != '18.04'
+  when: (ansible_architecture != "aarch64") or
+        (ansible_distribution == "Ubuntu" and ansible_distribution_major_version != "18.04")
   become: true
 
 - name: Symlink puppet
@@ -21,8 +19,6 @@
     src: /opt/puppetlabs/puppet/bin/facter
     dest: /usr/bin/puppet
     state: link
-  when:
-    - ansible_architecture != 'aarch64'
-    - ansible_distribution == 'Ubuntu'
-    - ansible_distribution_version != '18.04'
+    when: (ansible_architecture != "aarch64") or
+          (ansible_distribution == "Ubuntu" and ansible_distribution_major_version != "18.04")
   become: true
