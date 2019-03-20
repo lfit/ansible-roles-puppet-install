@@ -10,8 +10,8 @@
     src: /opt/puppetlabs/bin/facter
     dest: /usr/bin/facter
     state: link
-  # yamllint disable-line rule:line-length
-  when: ansible_architecture != 'aarch64' or ansible_distribution == 'Ubuntu' and ansible_distribution_version != '18.04'
+  when: ansible_architecture != 'aarch64' or
+        (ansible_distribution == 'Ubuntu' and ansible_distribution_version != '18.04')
   become: true
 
 - name: Symlink puppet
@@ -19,6 +19,6 @@
     src: /opt/puppetlabs/puppet/bin/facter
     dest: /usr/bin/puppet
     state: link
-  # yamllint disable-line rule:line-length
-  when: ansible_architecture != 'aarch64' or ansible_distribution == 'Ubuntu' and ansible_distribution_version != '18.04'
+    when: ansible_architecture != 'aarch64' or
+          (ansible_distribution == 'Ubuntu' and ansible_distribution_version != '18.04')
   become: true
