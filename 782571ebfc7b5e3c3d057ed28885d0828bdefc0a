@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5742a46c_574bba2f",
+        "filename": "tasks/main.yml",
+        "patchSetId": 5
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 214
+      },
+      "writtenOn": "2019-03-21T23:18:28Z",
+      "side": 1,
+      "message": "Missing end parenthesis?",
+      "range": {
+        "startLine": 13,
+        "startChar": 8,
+        "endLine": 13,
+        "endChar": 9
+      },
+      "revId": "782571ebfc7b5e3c3d057ed28885d0828bdefc0a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "be0090ec_c242eecb",
+        "filename": "tasks/main.yml",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 214
+      },
+      "writtenOn": "2019-03-21T23:18:28Z",
+      "side": 1,
+      "message": "Missing end parenthesis?",
+      "range": {
+        "startLine": 22,
+        "startChar": 10,
+        "endLine": 22,
+        "endChar": 11
+      },
+      "revId": "782571ebfc7b5e3c3d057ed28885d0828bdefc0a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
