@@ -1,9 +1,9 @@
 ---
-- include_tasks: '{{item}}'
+- include_tasks: '{{ item }}'
   with_first_found:
-    - '{{ansible_os_family}}-{{ansible_architecture}}.yml'
-    - '{{ansible_distribution}}.yml'
-    - '{{ansible_os_family}}.yml'
+    - '{{ ansible_os_family }}-{{ ansible_architecture }}.yml'
+    - '{{ ansible_distribution }}.yml'
+    - '{{ ansible_os_family }}.yml'
 
 - name: Symlink facter
   file:
@@ -11,7 +11,7 @@
     dest: /usr/bin/facter
     state: link
   # yamllint disable-line rule:line-length
-  when: ansible_architecture != 'aarch64' or ansible_distribution == 'Ubuntu' and ansible_distribution_version != '18.04'
+  when: ansible_architecture != 'aarch64' and ansible_distribution == 'Ubuntu' and ansible_distribution_version != '18.04'
   become: true
 
 - name: Symlink puppet
@@ -20,5 +20,5 @@
     dest: /usr/bin/puppet
     state: link
   # yamllint disable-line rule:line-length
-  when: ansible_architecture != 'aarch64' or ansible_distribution == 'Ubuntu' and ansible_distribution_version != '18.04'
+  when: ansible_architecture != 'aarch64' and ansible_distribution == 'Ubuntu' and ansible_distribution_version != '18.04'
   become: true
