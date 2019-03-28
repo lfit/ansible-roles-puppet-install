@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a2be015_cc848418",
+        "filename": "tasks/main.yml",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 283
+      },
+      "writtenOn": "2019-03-28T07:20:30Z",
+      "side": 1,
+      "message": "by other words it will create symlinks just for Ubuntu which is not on 18.04 version and not running on arm. Is it intentional behavior as it\u0027s changing logical pattern from original version. How about other non Ubuntu system ?",
+      "revId": "e5bb9a32539e34b64e037d0b42ad4dfa8a94c5bb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27c1e86b_03886780",
+        "filename": "tasks/main.yml",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 283
+      },
+      "writtenOn": "2019-03-28T07:20:30Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "e5bb9a32539e34b64e037d0b42ad4dfa8a94c5bb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
