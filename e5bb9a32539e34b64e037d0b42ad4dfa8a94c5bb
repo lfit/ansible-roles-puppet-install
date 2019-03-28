@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "a14428e3_abe12333",
+        "filename": "tasks/main.yml",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 281
+      },
+      "writtenOn": "2019-03-28T08:31:02Z",
+      "side": 1,
+      "message": "Hi Michal,\n\nthis is exactly the required behaviour.\n\nHistory:\n* original arm64 patch added first condition to skip symlinks creation on arm64, because on arm facter is installed directly from ubuntu package and thus symlinks can\u0027t be created (and would brake the build)\n* recent patch added the second part, to skip symlinks creation on Ubuntu 18.04; however by mistake \"or\" was used, so the symlinks were crated (and failed) on Ubuntu 16.04 on arm64.\n\nI\u0027ve just fixed, what the 2nd patch has broken. Of course there is plenty of space for refactoring, e.g.\n* why not to install facter from Ubuntu repo also on x86?\n* why not to rewrite the condition to be more strict, i.e. to apply only for Ubuntu 16.04 on x86\n\n--Martin",
+      "parentUuid": "5a2be015_cc848418",
+      "revId": "e5bb9a32539e34b64e037d0b42ad4dfa8a94c5bb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "27c1e86b_03886780",
         "filename": "tasks/main.yml",
         "patchSetId": 3
