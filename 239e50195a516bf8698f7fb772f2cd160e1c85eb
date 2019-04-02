@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cc6c369a_3463ee7e",
+        "filename": "tasks/main.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 15
+      },
+      "writtenOn": "2019-04-02T22:10:20Z",
+      "side": 1,
+      "message": "Why is this switching from `ansible_distribution` to `ansible_os_family`?",
+      "range": {
+        "startLine": 15,
+        "startChar": 9,
+        "endLine": 15,
+        "endChar": 39
+      },
+      "revId": "239e50195a516bf8698f7fb772f2cd160e1c85eb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
