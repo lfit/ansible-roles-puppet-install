@@ -16,6 +16,24 @@
       "revId": "7985e5ba329ab8fb26f2ea3d1d85ce0f0917cfd9",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "211b6671_c1931314",
+        "filename": "tasks/main.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-04-02T23:28:34Z",
+      "side": 1,
+      "message": "this skips only when ansible_distribution_version !\u003d \u002718.04\u0027 so when U14||U16 should go thru.",
+      "parentUuid": "3aaced1b_3e7c27c2",
+      "revId": "7985e5ba329ab8fb26f2ea3d1d85ce0f0917cfd9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
