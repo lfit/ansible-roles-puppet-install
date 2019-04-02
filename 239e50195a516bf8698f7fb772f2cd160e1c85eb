@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "c8e7b0a3_444d7169",
+        "filename": "tasks/main.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-04-02T22:55:00Z",
+      "side": 1,
+      "message": "The intended purpose is that it\u0027s anything that isn\u0027t aarch64 AND specifically not ubuntu 18.04. The current linking is pretty much going to happen if it\u0027s any system because everything is now ORed\n\nThis should be more along the lines of\n\n( ansible architecture !\u003d \u0027aarch64\u0027 ) and\n!( ansibile_distribution \u003d\u003d \u0027Ubuntu\u0027 and ansible_distribution_version !\u003d \u002718.04\u0027 )\n\nAssuming that you can ! a sub-expression.",
+      "range": {
+        "startLine": 13,
+        "startChar": 46,
+        "endLine": 13,
+        "endChar": 48
+      },
+      "revId": "239e50195a516bf8698f7fb772f2cd160e1c85eb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "cc6c369a_3463ee7e",
         "filename": "tasks/main.yml",
         "patchSetId": 1
