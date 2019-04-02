@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "54455cee_b92d0641",
+        "filename": "tasks/main.yml",
+        "patchSetId": 12
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 127
+      },
+      "writtenOn": "2019-04-02T20:41:00Z",
+      "side": 1,
+      "message": "Watching from the sidelines, this is a level nested too far, it should be the same level as become/file",
+      "range": {
+        "startLine": 21,
+        "startChar": 4,
+        "endLine": 21,
+        "endChar": 43
+      },
+      "revId": "ffa940c353cc066a7f937ea17fc1bc67807b6b6e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
