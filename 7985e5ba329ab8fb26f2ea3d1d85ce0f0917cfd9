@@ -34,6 +34,24 @@
       "revId": "7985e5ba329ab8fb26f2ea3d1d85ce0f0917cfd9",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8c36ea58_8070804a",
+        "filename": "tasks/main.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-04-02T23:32:19Z",
+      "side": 1,
+      "message": "right but read the boolean chart again. We need it to skip if it\u0027s U14|U16 AND aarch\n\nbasically we should skip linking on u18 (doesn\u0027t matter arch) and any other distro if aarch",
+      "parentUuid": "211b6671_c1931314",
+      "revId": "7985e5ba329ab8fb26f2ea3d1d85ce0f0917cfd9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
