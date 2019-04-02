@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaced1b_3e7c27c2",
+        "filename": "tasks/main.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-04-02T23:26:04Z",
+      "side": 1,
+      "message": "This skips the case where we don\u0027t want to do linking on U14|16 aarch64",
+      "revId": "7985e5ba329ab8fb26f2ea3d1d85ce0f0917cfd9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
