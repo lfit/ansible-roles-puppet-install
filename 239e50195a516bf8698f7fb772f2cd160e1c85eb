@@ -22,6 +22,30 @@
       "revId": "239e50195a516bf8698f7fb772f2cd160e1c85eb",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "333c1048_6402f326",
+        "filename": "tasks/main.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-04-02T22:47:20Z",
+      "side": 1,
+      "message": "Using this as its a more generic way, but i\u0027ll change this back to the original ansible_distribution.",
+      "parentUuid": "cc6c369a_3463ee7e",
+      "range": {
+        "startLine": 15,
+        "startChar": 9,
+        "endLine": 15,
+        "endChar": 39
+      },
+      "revId": "239e50195a516bf8698f7fb772f2cd160e1c85eb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
