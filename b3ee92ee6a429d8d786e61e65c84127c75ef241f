@@ -22,6 +22,30 @@
       "revId": "b3ee92ee6a429d8d786e61e65c84127c75ef241f",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "53491440_1490e319",
+        "filename": "tasks/main.yml",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-04-03T00:33:19Z",
+      "side": 1,
+      "message": "right, my bad",
+      "parentUuid": "ce9a76f9_d4aca503",
+      "range": {
+        "startLine": 16,
+        "startChar": 89,
+        "endLine": 16,
+        "endChar": 126
+      },
+      "revId": "b3ee92ee6a429d8d786e61e65c84127c75ef241f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
