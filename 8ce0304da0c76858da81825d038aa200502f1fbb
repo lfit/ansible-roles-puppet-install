@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8136abaf_665e0577",
+        "filename": "tasks/main.yml",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-04-03T00:34:22Z",
+      "side": 1,
+      "message": "Missed this on the last round. This needs to be ! we don\u0027t want to link on U18. That\u0027s what the boolean chart I wrote says.",
+      "range": {
+        "startLine": 16,
+        "startChar": 76,
+        "endLine": 16,
+        "endChar": 77
+      },
+      "revId": "8ce0304da0c76858da81825d038aa200502f1fbb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
