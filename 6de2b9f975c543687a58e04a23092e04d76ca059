@@ -1,0 +1,8 @@
+Verified+1: Jenkins CI <releng+lf-jenkins@linuxfoundation.org>
+Code-Review+2: Andrew Grimberg <agrimberg@linuxfoundation.org>
+Code-Review+2: Anil Belur <abelur@linuxfoundation.org>
+Submitted-by: Anil Belur <abelur@linuxfoundation.org>
+Submitted-at: Wed, 03 Apr 2019 20:26:34 +0000
+Reviewed-on: https://gerrit.linuxfoundation.org/infra/15177
+Project: ansible/roles/puppet-install
+Branch: refs/heads/master
