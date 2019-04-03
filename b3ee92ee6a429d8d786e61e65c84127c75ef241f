@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ce9a76f9_d4aca503",
+        "filename": "tasks/main.yml",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-04-03T00:18:40Z",
+      "side": 1,
+      "message": "I think this or clause can be left off as we\u0027re just not going to link on u18",
+      "range": {
+        "startLine": 16,
+        "startChar": 89,
+        "endLine": 16,
+        "endChar": 126
+      },
+      "revId": "b3ee92ee6a429d8d786e61e65c84127c75ef241f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
