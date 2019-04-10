@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "87dea788_091386ed",
+        "filename": "tasks/main.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-04-10T10:02:39Z",
+      "side": 1,
+      "message": "As per the Ansible docs [1.], this is format treats each line/cond as a \u0027logical and\u0027. The condition looks right, i\u0027ll need to test this for ODL and update here.\n\n[1.] https://docs.ansible.com/ansible/latest/user_guide/playbooks_conditionals.html",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 45
+      },
+      "revId": "e0cbef248f61a0c17cb68936b500564768c17298",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
