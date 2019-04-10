@@ -22,6 +22,30 @@
       "revId": "e0cbef248f61a0c17cb68936b500564768c17298",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bb971996_b52bd3d4",
+        "filename": "tasks/main.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-04-10T11:12:09Z",
+      "side": 1,
+      "message": "Tested this with ODL Centos7 builder image which I have built now, and works as expected.\n\n| 5c083814-1c0b-48f3-be6d-a28e8721b862 \n| ZZCI - CentOS 7 - builder - x86_64 - 20190410-100540.905\n\n$ ls -la /usr/bin/facter\nlrwxrwxrwx. 1 root root 26 Apr 10 10:24 /usr/bin/facter -\u003e /opt/puppetlabs/bin/facter",
+      "parentUuid": "87dea788_091386ed",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 45
+      },
+      "revId": "e0cbef248f61a0c17cb68936b500564768c17298",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
