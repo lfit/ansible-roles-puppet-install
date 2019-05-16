@@ -9,9 +9,9 @@
   when: ansible_architecture != 'aarch64'
   become: true
 
-- name: Install puppetlabs-release-pc1
+- name: Install puppet-release
   apt:
-    deb: https://apt.puppetlabs.com/puppetlabs-release-pc1-xenial.deb
+    deb: https://apt.puppetlabs.com/puppet-release-xenial.deb
   when: ansible_architecture != 'aarch64'
   become: true
 

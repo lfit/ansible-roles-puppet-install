@@ -1,7 +1,7 @@
 ---
-- name: Install puppetlabs-release-pc1
+- name: Install puppet-release
   yum:
-    name: https://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm
+    name: https://yum.puppetlabs.com/puppet-release-el-7.noarch.rpm
     state: present
   become: true
 
