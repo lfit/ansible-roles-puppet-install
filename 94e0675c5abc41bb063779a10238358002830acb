@@ -1,0 +1,7 @@
+Verified+1: Jenkins CI <releng+lf-jenkins@linuxfoundation.org>
+Code-Review+2: Andrew Grimberg <agrimberg@linuxfoundation.org>
+Submitted-by: Andrew Grimberg <agrimberg@linuxfoundation.org>
+Submitted-at: Mon, 20 May 2019 17:40:43 +0000
+Reviewed-on: https://gerrit.linuxfoundation.org/infra/c/ansible/roles/puppet-install/+/15611
+Project: ansible/roles/puppet-install
+Branch: refs/heads/master
