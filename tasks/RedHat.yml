@@ -1,7 +1,7 @@
 ---
 - name: Install puppet-release
   yum:
-    name: https://yum.puppetlabs.com/puppet-release-el-7.noarch.rpm
+    name: https://yum.puppetlabs.com/puppet-release-el-{{ ansible_distribution_major_version }}.noarch.rpm
     state: present
   become: true
 
