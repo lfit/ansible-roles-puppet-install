@@ -2,4 +2,3 @@
 #
 b8479a902537449130d11ce6775f2104f4388a68                                                   	saml/lf-gerrit-ansible-roles-puppet-install-committers
 d68d00a2419f8ff627fc120cf9dd9055ae422153                                                   	GitHub Replication
-ldap:cn=lf-gerrit-ansible-roles-puppet-install-committers,ou=Groups,dc=freestandards,dc=org	ldap/lf-gerrit-ansible-roles-puppet-install-committers
