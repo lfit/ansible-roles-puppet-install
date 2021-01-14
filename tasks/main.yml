@@ -11,6 +11,7 @@
     src: /opt/puppetlabs/bin/facter
     dest: /usr/bin/facter
     state: link
+    force: yes
   when:
     - ansible_architecture != 'aarch64'
     - ansible_distribution == 'Ubuntu' or ansible_distribution == 'CentOS'
@@ -19,9 +20,10 @@
 
 - name: Symlink puppet
   file:
-    src: /opt/puppetlabs/puppet/bin/facter
+    src: /opt/puppetlabs/puppet/bin/puppet
     dest: /usr/bin/puppet
     state: link
+    force: yes
   when:
     - ansible_architecture != 'aarch64'
     - ansible_distribution == 'Ubuntu' or ansible_distribution == 'CentOS'
