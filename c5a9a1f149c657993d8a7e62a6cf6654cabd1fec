@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "fede7498_eafa97d0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2021-01-14T19:25:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2985d202_3f4bd5ff",
+      "range": {
+        "startLine": 7,
+        "startChar": 4,
+        "endLine": 7,
+        "endChar": 10
+      },
+      "revId": "c5a9a1f149c657993d8a7e62a6cf6654cabd1fec",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "11b51349_f4b41d4d",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1
@@ -45,6 +69,30 @@
       "revId": "c5a9a1f149c657993d8a7e62a6cf6654cabd1fec",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a7fc91ff_947a71f3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2021-01-14T19:25:58Z",
+      "side": 1,
+      "message": "Changed to \"puppet to facter\", which I believe is what Anil meant here.",
+      "parentUuid": "11b51349_f4b41d4d",
+      "range": {
+        "startLine": 13,
+        "startChar": 37,
+        "endLine": 13,
+        "endChar": 39
+      },
+      "revId": "c5a9a1f149c657993d8a7e62a6cf6654cabd1fec",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
