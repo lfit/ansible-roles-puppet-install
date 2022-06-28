@@ -4,8 +4,9 @@ galaxy_info:
   description: Install Puppet
   company: The Linux Foundation
   issue_tracker_url: https://jira.linuxfoundation.org
-
   license: MIT
+  namespace: lfit
+  role_name: ansible-galaxy-puppet-install
 
   min_ansible_version: 1.2
 
