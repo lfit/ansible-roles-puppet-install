@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c110a3fc_d4a6f33e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-06-28T23:17:24Z",
+      "side": 1,
+      "message": "I need this merged to the newer centos8 images for ODL.",
+      "revId": "06a6c4e80b05064a1d28aa88fd5e20190755c30e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1c1aaabe_93cd55d3",
@@ -14,6 +31,30 @@
       "writtenOn": "2022-06-28T23:07:52Z",
       "side": 1,
       "message": "Why are we pinning a two year old version of molecule?",
+      "range": {
+        "startLine": 16,
+        "startChar": 4,
+        "endLine": 16,
+        "endChar": 19
+      },
+      "revId": "06a6c4e80b05064a1d28aa88fd5e20190755c30e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2844a0c7_bfd0fd2c",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-06-28T23:17:24Z",
+      "side": 1,
+      "message": "That\u0027s because the molecule files have to updated, That can be done as a separate task for all the ansible galaxy roles.",
+      "parentUuid": "1c1aaabe_93cd55d3",
       "range": {
         "startLine": 16,
         "startChar": 4,
