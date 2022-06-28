@@ -4,8 +4,9 @@ galaxy_info:
   description: Install Puppet
   company: The Linux Foundation
   issue_tracker_url: https://jira.linuxfoundation.org
-
   license: MIT
+  namespace: thelinuxfoundation
+  role_name: puppet-install
 
   min_ansible_version: 1.2
 
@@ -13,9 +14,11 @@ galaxy_info:
     - name: EL
       versions:
         - 7
+        - 8
     - name: Ubuntu
       versions:
-        - xenial
+        - bionic
+        - focal
 
   galaxy_tags:
     - puppet
