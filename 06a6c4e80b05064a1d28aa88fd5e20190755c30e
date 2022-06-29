@@ -63,6 +63,30 @@
       },
       "revId": "06a6c4e80b05064a1d28aa88fd5e20190755c30e",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d47c0bac_28a88d98",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-06-29T02:38:04Z",
+      "side": 1,
+      "message": "I\u0027ve tried updating to the latest version of molecule, however this fails and requires additional changes to the molecules tests/config and, requires testing a possible update to ansible itself to work with more recent version of molecule. \n\nI\u0027ll open a separate issue on Jira to track this, this since is more\n\nhttps://jenkins.opendaylight.org/releng/job/lf-infra-ansible-roles-tox-verify-any/659/console\n\nrolling back to the previous version of the CR.\n\nRef: https://github.com/ansible-community/molecule/pull/3549",
+      "parentUuid": "2844a0c7_bfd0fd2c",
+      "range": {
+        "startLine": 16,
+        "startChar": 4,
+        "endLine": 16,
+        "endChar": 19
+      },
+      "revId": "06a6c4e80b05064a1d28aa88fd5e20190755c30e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
