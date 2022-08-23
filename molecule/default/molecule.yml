@@ -11,7 +11,7 @@ platforms:
   - name: centos7
     image: centos:7
   - name: centos8
-    image: quay.io/pycontribs/centos:stream8
+    image: quay.io/centos/centos:stream8
   - name: ubuntu1804
     image: ubuntu:18.04
   - name: ubuntu2004
