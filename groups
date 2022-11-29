@@ -1,4 +1,5 @@
-# UUID                                                                                     	Group Name
+# UUID                                  	Group Name
 #
-b8479a902537449130d11ce6775f2104f4388a68                                                   	saml/lf-gerrit-ansible-roles-puppet-install-committers
-d68d00a2419f8ff627fc120cf9dd9055ae422153                                                   	GitHub Replication
+824623e509ec71c6574dad386e59e709eaedd178	Gitlab Replication
+b8479a902537449130d11ce6775f2104f4388a68	saml/lf-gerrit-ansible-roles-puppet-install-committers
+d68d00a2419f8ff627fc120cf9dd9055ae422153	GitHub Replication
