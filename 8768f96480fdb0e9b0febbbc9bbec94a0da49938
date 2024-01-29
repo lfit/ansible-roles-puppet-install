@@ -1,0 +1,8 @@
+Verified+1: Jenkins CI <releng+lf-jenkins@linuxfoundation.org>
+Code-Review+2: Jessica Wagantall <jwagantall@linuxfoundation.org>
+Verified+1: LFIT Required GHA <releng+lfit-required-gha@linuxfoundation.org>
+Submitted-by: Jessica Wagantall <jwagantall@linuxfoundation.org>
+Submitted-at: Mon, 29 Jan 2024 23:13:05 +0000
+Reviewed-on: https://gerrit.linuxfoundation.org/infra/c/ansible/roles/puppet-install/+/72583
+Project: ansible/roles/puppet-install
+Branch: refs/heads/master
