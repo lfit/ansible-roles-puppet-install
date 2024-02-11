@@ -1,5 +1,6 @@
 ---
-- include_tasks: '{{ item }}'
+- name: Install requirements based on platform
+  ansible.builtin.include_tasks: '{{ item }}'
   with_first_found:
     - '{{ ansible_os_family }}-{{ ansible_architecture }}.yml'
     - '{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml'
@@ -7,7 +8,7 @@
     - '{{ ansible_os_family }}.yml'
 
 - name: Symlink facter
-  file:
+  ansible.builtin.file:
     src: /opt/puppetlabs/bin/facter
     dest: /usr/bin/facter
     state: link
@@ -19,7 +20,7 @@
   become: true
 
 - name: Symlink puppet
-  file:
+  ansible.builtin.file:
     src: /opt/puppetlabs/puppet/bin/puppet
     dest: /usr/bin/puppet
     state: link

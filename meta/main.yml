@@ -17,10 +17,12 @@ galaxy_info:
         - 7
         - 8
         - 9
+
     - name: Ubuntu
       versions:
         - xenial
         - focal
+        - jammy
 
   galaxy_tags:
     - puppet
