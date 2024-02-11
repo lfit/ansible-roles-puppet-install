@@ -1,6 +1,6 @@
 ---
 - name: Install Facter
-  apt:
+  ansible.builtin.package:
     name: facter
     state: present
     update_cache: true

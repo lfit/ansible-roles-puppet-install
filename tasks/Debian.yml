@@ -1,6 +1,6 @@
 ---
 - name: Purge puppet
-  apt:
+  ansible.builtin.package:
     name:
       - puppet
       - puppet-common
@@ -10,13 +10,13 @@
   become: true
 
 - name: Install puppet-release
-  apt:
+  ansible.builtin.package:
     deb: https://apt.puppetlabs.com/puppet-release-xenial.deb
   when: ansible_architecture != 'aarch64'
   become: true
 
 - name: Install puppet-agent
-  apt:
+  ansible.builtin.package:
     name: puppet-agent
     state: present
     update_cache: true
