@@ -15,14 +15,6 @@
   when: ansible_architecture != 'aarch64'
   become: true
 
-- name: Add Puppet Labs repository
-  become: true
-  apt_repository:
-    repo: "deb http://apt.puppetlabs.com puppet7"
-    state: present
-    update_cache: true
-  when: ansible_architecture != 'aarch64'
-
 - name: Install puppet-agent
   ansible.builtin.package:
     name: puppet-agent
