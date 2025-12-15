@@ -1,4 +1,7 @@
 ---
+# SPDX-License-Identifier: Apache-2.0
+# Copyright 2024 The Linux Foundation <abelur@linux.com>
+
 name: Gerrit Verify for Ansible roles
 
 # yamllint disable-line rule:truthy
@@ -50,20 +53,25 @@ jobs:
   prepare:
     runs-on: ubuntu-latest
     steps:
-      - name: Clear votes
+      - name: Gerrit Checkout
         # yamllint disable-line rule:line-length
-        uses: lfit/gerrit-review-action@9627b9a144f2a2cad70707ddfae87c87dce60729 # v0.8
+        uses: lfit/checkout-gerrit-change-action@54d751e8bd167bc91f7d665dabe33fae87aaaa63 # v0.9
         with:
-          host: ${{ vars.LFIT_GERRIT_SERVER }}
-          username: ${{ vars.LFIT_GERRIT_SSH_USER }}
-          key: ${{ secrets.LFIT_GERRIT_SSH_PRIVKEY_NP }}
-          known_hosts: ${{ vars.LFIT_GERRIT_KNOWN_HOSTS }}
-          gerrit-change-number: ${{ inputs.GERRIT_CHANGE_NUMBER }}
-          gerrit-patchset-number: ${{ inputs.GERRIT_PATCHSET_NUMBER }}
-          vote-type: clear
-          comment-only: false
-      - name: Allow replication
-        run: sleep 10s
+          gerrit-refspec: ${{ inputs.GERRIT_REFSPEC }}
+          gerrit-project: ${{ inputs.GERRIT_PROJECT }}
+          gerrit-url: ${{ vars.GERRIT_URL }}
+          delay: "0s"
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        id: setup-python
+        with:
+          python-version: "3.10"
+      - name: Clone git submodules
+        run: git submodule update --init
+      - name: Install dependencies
+        run: pipx install pre-commit
+      - name: Run static analysis and format checkers
+        run: pipx run pre-commit run --all-files --show-diff-on-failure
 
   actionlint:
     needs: prepare
@@ -79,13 +87,13 @@ jobs:
           delay: "0s"
       - name: Download actionlint
         id: get_actionlint
+        # yamllint disable-line rule:line-length
         run: bash <(curl https://raw.githubusercontent.com/rhysd/actionlint/main/scripts/download-actionlint.bash)
         shell: bash
       - name: Check workflow files
         run: ${{ steps.get_actionlint.outputs.executable }} -color
         shell: bash
 
-  # run pre-commit tox env separately to get use of more parallel processing
   pre-commit:
     needs: prepare
     runs-on: ubuntu-latest
@@ -98,7 +106,8 @@ jobs:
           gerrit-project: ${{ inputs.GERRIT_PROJECT }}
           gerrit-url: ${{ vars.GERRIT_URL }}
           delay: "0s"
-      - uses: actions/setup-python@v5
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
           python-version: "3.10"
       - name: Run static analysis and format checkers
@@ -111,7 +120,6 @@ jobs:
     strategy:
       matrix:
         distro:
-          - centos9
           - ubuntu2204
           - ubuntu2404
       fail-fast: false
@@ -129,7 +137,7 @@ jobs:
           python -m pip install --upgrade pip
           pip3 install -r requirements.txt
       - name: Run Molecule tests
-        run: molecule test
+        run: molecule test --platform-name ${{ matrix.distro }}
         env:
           PY_COLORS: "1"
           ANSIBLE_FORCE_COLOR: "1"
@@ -142,22 +150,25 @@ jobs:
     needs:
       [
         prepare,
-        actionlint,
         pre-commit,
+        actionlint,
         molecule-run,
       ]
     runs-on: ubuntu-latest
     steps:
-      - name: Get conclusion
-        # yamllint disable-line rule:line-length
+      - name: Get workflow conclusion
         uses: im-open/workflow-conclusion@e4f7c4980600fbe0818173e30931d3550801b992 # v2.2.3
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          fallback-conclusion: skipped
       - name: Set vote
+        # yamllint disable-line rule:line-length
         uses: lfit/gerrit-review-action@9627b9a144f2a2cad70707ddfae87c87dce60729 # v0.8
         with:
-          host: ${{ vars.LFIT_GERRIT_SERVER }}
-          username: ${{ vars.LFIT_GERRIT_SSH_USER }}
-          key: ${{ secrets.LFIT_GERRIT_SSH_PRIVKEY_NP }}
-          known_hosts: ${{ vars.LFIT_GERRIT_KNOWN_HOSTS }}
+          host: ${{ vars.GERRIT_SERVER }}
+          username: ${{ vars.GERRIT_SSH_USER_G2G }}
+          key: ${{ secrets.GERRIT_SSH_PRIVKEY_G2G }}
+          known_hosts: ${{ vars.GERRIT_KNOWN_HOSTS }}
           gerrit-change-number: ${{ inputs.GERRIT_CHANGE_NUMBER }}
           gerrit-patchset-number: ${{ inputs.GERRIT_PATCHSET_NUMBER }}
           vote-type: ${{ env.WORKFLOW_CONCLUSION }}
