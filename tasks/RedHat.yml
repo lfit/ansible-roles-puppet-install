@@ -1,12 +1,12 @@
 ---
-- name: "Download the Puppet RPM GPG KEY for EL - {{ ansible_distribution_major_version }}"
+- name: "Download the Puppet RPM GPG KEY for EL - {{ ansible_facts['distribution_major_version'] }}"
   ansible.builtin.get_url:
     url: https://yum.puppetlabs.com/RPM-GPG-KEY-puppet-20250406
     dest: /tmp/RPM-GPG-KEY-puppet-20250406
     mode: 0600
   become: true
   when:
-    - ansible_os_family == 'RedHat' and ansible_facts['distribution_major_version'] is version('8', '>=')
+    - ansible_facts['os_family'] == 'RedHat' and ansible_facts['distribution_major_version'] is version('8', '>=')
 
 - name: Import Puppet RPM GPG KEY into the DB
   ansible.builtin.rpm_key:
@@ -14,11 +14,11 @@
     state: present
   become: true
   when:
-    - ansible_os_family == 'RedHat' and ansible_facts['distribution_major_version'] is version('8', '>=')
+    - ansible_facts['os_family'] == 'RedHat' and ansible_facts['distribution_major_version'] is version('8', '>=')
 
 - name: Install puppet-release
   ansible.builtin.yum:
-    name: https://yum.puppetlabs.com/puppet-release-el-{{ ansible_distribution_major_version }}.noarch.rpm
+    name: https://yum.puppetlabs.com/puppet-release-el-{{ ansible_facts['distribution_major_version'] }}.noarch.rpm
     state: present
   become: true
 

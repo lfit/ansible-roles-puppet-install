@@ -2,20 +2,39 @@
 dependency:
   name: galaxy
 driver:
-  name: docker
+  name: podman
 platforms:
-  # - name: centos7
-  #   image: centos:7
-  # - name: centos8
-  #   image: quay.io/centos/centos:stream8
-  # - name: ubuntu1804
-  #   image: ubuntu:18.04
-  - name: ubuntu2004
-    image: ubuntu:20.04
+  - name: centos9
+    image: quay.io/centos/centos:stream9
   - name: ubuntu2204
     image: ubuntu:22.04
+  - name: ubuntu2404
+    image: ubuntu:24.04
 provisioner:
   name: ansible
-  # Fix for role path finding in latest molecule versions (~25.4.0)
-  env:
-    ANSIBLE_ROLES_PATH: ../../../
+  config_options:
+    defaults:
+      callbacks_enabled: profile_tasks
+      inject_facts_as_vars: false
+  inventory:
+    host_vars:
+      centos9:
+        ansible_python_interpreter: /usr/bin/python3
+      ubuntu2204:
+        ansible_python_interpreter: /usr/bin/python3
+      ubuntu2404:
+        ansible_python_interpreter: /usr/bin/python3
+scenario:
+  name: default
+  test_sequence:
+    - destroy
+    - dependency
+    - syntax
+    - create
+    - prepare
+    - converge
+    - side_effect
+    - verify
+    - destroy
+verifier:
+  name: ansible

@@ -6,13 +6,13 @@
       - puppet-common
     state: absent
     purge: true
-  when: ansible_architecture != 'aarch64'
+  when: ansible_facts['architecture'] != 'aarch64'
   become: true
 
-- name: Install puppet-release
+- name: Install puppet-release for Ubuntu
   ansible.builtin.package:
-    deb: "https://apt.puppetlabs.com/puppet-release-{{ ansible_distribution_release }}.deb"
-  when: ansible_architecture != 'aarch64'
+    deb: "https://apt.puppetlabs.com/puppet-release-{{ ansible_facts['distribution_release'] }}.deb"
+  when: ansible_facts['architecture'] != 'aarch64'
   become: true
 
 - name: Install puppet-agent
@@ -20,5 +20,5 @@
     name: puppet-agent
     state: present
     update_cache: true
-  when: ansible_architecture != 'aarch64'
+  when: ansible_facts['architecture'] != 'aarch64'
   become: true

@@ -2,10 +2,10 @@
 - name: Install requirements based on platform
   ansible.builtin.include_tasks: '{{ item }}'
   with_first_found:
-    - '{{ ansible_os_family }}-{{ ansible_architecture }}.yml'
-    - '{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml'
-    - '{{ ansible_distribution }}.yml'
-    - '{{ ansible_os_family }}.yml'
+    - '{{ ansible_facts["os_family"] }}-{{ ansible_facts["architecture"] }}.yml'
+    - '{{ ansible_facts["distribution"] }}-{{ ansible_facts["distribution_major_version"] }}.yml'
+    - '{{ ansible_facts["distribution"] }}.yml'
+    - '{{ ansible_facts["os_family"] }}.yml'
 
 - name: Symlink facter
   ansible.builtin.file:
@@ -14,9 +14,9 @@
     state: link
     force: yes
   when:
-    - ansible_architecture != 'aarch64'
-    - ansible_distribution == 'Ubuntu' or ansible_distribution == 'CentOS'
-    - ansible_distribution_version != '18.04'
+    - ansible_facts["architecture"] != 'aarch64'
+    - ansible_facts["distribution"] == 'Ubuntu' or ansible_facts["distribution"] == 'CentOS'
+    - ansible_facts["distribution_version"] != '18.04'
   become: true
 
 - name: Symlink puppet
@@ -26,7 +26,7 @@
     state: link
     force: yes
   when:
-    - ansible_architecture != 'aarch64'
-    - ansible_distribution == 'Ubuntu' or ansible_distribution == 'CentOS'
-    - ansible_distribution_version != '18.04'
+    - ansible_facts["architecture"] != 'aarch64'
+    - ansible_facts["distribution"] == 'Ubuntu' or ansible_facts["distribution"] == 'CentOS'
+    - ansible_facts["distribution_version"] != '18.04'
   become: true

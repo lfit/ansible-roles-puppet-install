@@ -14,15 +14,12 @@ galaxy_info:
   platforms:
     - name: EL
       versions:
-        - 7
-        - 8
         - 9
 
     - name: Ubuntu
       versions:
-        - xenial
-        - focal
         - jammy
+        - noble
 
   galaxy_tags:
     - puppet
