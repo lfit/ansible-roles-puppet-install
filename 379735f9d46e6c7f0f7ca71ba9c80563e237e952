@@ -1,0 +1,7 @@
+Code-Review+2: Anil Belur <abelur@linuxfoundation.org>
+Verified+1: LFIT Required GHA <releng+lfit-required-gha@linuxfoundation.org>
+Submitted-by: Anil Belur <abelur@linuxfoundation.org>
+Submitted-at: Mon, 15 Dec 2025 13:56:09 +0000
+Reviewed-on: https://gerrit.linuxfoundation.org/infra/c/ansible/roles/puppet-install/+/74003
+Project: ansible/roles/puppet-install
+Branch: refs/heads/master
