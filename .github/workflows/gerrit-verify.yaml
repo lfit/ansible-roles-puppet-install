@@ -53,25 +53,20 @@ jobs:
   prepare:
     runs-on: ubuntu-latest
     steps:
-      - name: Gerrit Checkout
+      - name: Clear votes
         # yamllint disable-line rule:line-length
-        uses: lfit/checkout-gerrit-change-action@54d751e8bd167bc91f7d665dabe33fae87aaaa63 # v0.9
+        uses: lfit/gerrit-review-action@9627b9a144f2a2cad70707ddfae87c87dce60729 # v0.8
         with:
-          gerrit-refspec: ${{ inputs.GERRIT_REFSPEC }}
-          gerrit-project: ${{ inputs.GERRIT_PROJECT }}
-          gerrit-url: ${{ vars.GERRIT_URL }}
-          delay: "0s"
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        id: setup-python
-        with:
-          python-version: "3.10"
-      - name: Clone git submodules
-        run: git submodule update --init
-      - name: Install dependencies
-        run: pipx install pre-commit
-      - name: Run static analysis and format checkers
-        run: pipx run pre-commit run --all-files --show-diff-on-failure
+          host: ${{ vars.LFIT_GERRIT_SERVER }}
+          username: ${{ vars.LFIT_GERRIT_SSH_USER }}
+          key: ${{ secrets.LFIT_GERRIT_SSH_PRIVKEY_NP }}
+          known_hosts: ${{ vars.LFIT_GERRIT_KNOWN_HOSTS }}
+          gerrit-change-number: ${{ inputs.GERRIT_CHANGE_NUMBER }}
+          gerrit-patchset-number: ${{ inputs.GERRIT_PATCHSET_NUMBER }}
+          vote-type: clear
+          comment-only: false
+      - name: Allow replication
+        run: sleep 10s
 
   actionlint:
     needs: prepare
@@ -94,6 +89,7 @@ jobs:
         run: ${{ steps.get_actionlint.outputs.executable }} -color
         shell: bash
 
+  # run pre-commit tox env separately to get use of more parallel processing
   pre-commit:
     needs: prepare
     runs-on: ubuntu-latest
@@ -137,7 +133,7 @@ jobs:
           python -m pip install --upgrade pip
           pip3 install -r requirements.txt
       - name: Run Molecule tests
-        run: molecule test --platform-name ${{ matrix.distro }}
+        run: molecule test
         env:
           PY_COLORS: "1"
           ANSIBLE_FORCE_COLOR: "1"
@@ -150,8 +146,8 @@ jobs:
     needs:
       [
         prepare,
-        pre-commit,
         actionlint,
+        pre-commit,
         molecule-run,
       ]
     runs-on: ubuntu-latest
