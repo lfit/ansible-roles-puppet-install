@@ -132,6 +132,18 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip3 install -r requirements.txt
+      - name: Use the crun that matches podman
+        # podman 5.8.4 writes ociVersion 1.2.1 but resolves its runtime to
+        # /usr/bin/crun, which the Ubuntu archive still ships at 1.14.1.
+        # 1.14.1 rejects any version string without "1.0", so every build
+        # fails with "unknown version specified". The image already carries
+        # crun 1.28 in /usr/local/bin. Drop this once the runner image ships
+        # a matching crun: actions/runner-images#14473
+        run: |
+          if [ -x /usr/local/bin/crun ]; then
+            sudo cp /usr/local/bin/crun /usr/bin/crun
+          fi
+          /usr/bin/crun --version
       - name: Run Molecule tests
         run: molecule test
         env:
