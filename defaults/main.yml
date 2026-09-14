@@ -1,2 +1,17 @@
 ---
 # defaults file for puppet-install
+
+# Puppet Labs apt component to enable on Debian family hosts.
+#
+# The generic "puppet" component carries no puppet-agent for Ubuntu 24.04
+# (noble) or newer. Pointing those releases at it lets apt fall through to
+# the Ubuntu archive's own puppet-agent, which succeeds but installs no
+# /opt/puppetlabs tree, so the symlinks in tasks/main.yml dangle and facter
+# stops working. The versioned components still carry the agent.
+#
+# Override to pin a different major version, for example "puppet7".
+puppet_install_apt_component: >-
+  {{ 'puppet8'
+     if (ansible_facts['distribution'] == 'Ubuntu'
+         and ansible_facts['distribution_major_version'] is version('24', '>='))
+     else 'puppet' }}

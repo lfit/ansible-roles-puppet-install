@@ -11,7 +11,7 @@
 
 - name: Install puppet-release for Ubuntu
   ansible.builtin.package:
-    deb: "https://apt.puppetlabs.com/puppet-release-{{ ansible_facts['distribution_release'] }}.deb"
+    deb: "https://apt.puppetlabs.com/{{ puppet_install_apt_component }}-release-{{ ansible_facts['distribution_release'] }}.deb"
   when:
     - ansible_facts['architecture'] != 'aarch64'
     - ansible_facts['distribution_release'] != 'plucky'  # Skip Ubuntu 25.04 (not supported by Puppet Labs yet)

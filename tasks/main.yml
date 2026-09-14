@@ -7,6 +7,27 @@
     - '{{ ansible_facts["distribution"] }}.yml'
     - '{{ ansible_facts["os_family"] }}.yml'
 
+- name: Look for the Puppet Labs binaries
+  ansible.builtin.stat:
+    path: "{{ item }}"
+  register: puppet_install_binaries
+  loop:
+    - /opt/puppetlabs/bin/facter
+    - /opt/puppetlabs/puppet/bin/puppet
+
+- name: Report a missing Puppet Labs agent
+  ansible.builtin.debug:
+    msg: >-
+      {{ item.item }} is missing, so it was not linked into /usr/bin.
+      puppet-agent was either skipped for this release or satisfied by the
+      distribution archive rather than Puppet Labs. Check that
+      puppet_install_apt_component names a component that carries the agent
+      for {{ ansible_facts['distribution_release'] | default('this release') }}.
+  loop: "{{ puppet_install_binaries.results }}"
+  loop_control:
+    label: "{{ item.item }}"
+  when: not item.stat.exists
+
 - name: Symlink facter
   ansible.builtin.file:
     src: /opt/puppetlabs/bin/facter
@@ -17,6 +38,9 @@
     - ansible_facts["architecture"] != 'aarch64'
     - ansible_facts["distribution"] == 'Ubuntu' or ansible_facts["distribution"] == 'CentOS'
     - ansible_facts["distribution_version"] != '18.04'
+    # Never force a link onto a target that is not there. Doing so replaced
+    # any working facter with a broken one and reported success.
+    - puppet_install_binaries.results[0].stat.exists
   become: true
 
 - name: Symlink puppet
@@ -29,4 +53,5 @@
     - ansible_facts["architecture"] != 'aarch64'
     - ansible_facts["distribution"] == 'Ubuntu' or ansible_facts["distribution"] == 'CentOS'
     - ansible_facts["distribution_version"] != '18.04'
+    - puppet_install_binaries.results[1].stat.exists
   become: true

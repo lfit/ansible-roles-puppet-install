@@ -1,0 +1,56 @@
+---
+# Every task in this role reported success while facter was broken: apt
+# satisfied puppet-agent from the distribution archive, so /opt/puppetlabs
+# was never created, and the role then forced /usr/bin/facter onto a path
+# that did not exist. Nothing failed. Assert on the outcome instead.
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Stat the links the role manages
+      ansible.builtin.stat:
+        path: "{{ item }}"
+        follow: false
+      register: puppet_install_link
+      loop:
+        - /usr/bin/facter
+        - /usr/bin/puppet
+
+    - name: Stat what those links point at
+      ansible.builtin.stat:
+        path: "{{ item }}"
+        follow: true
+      register: puppet_install_target
+      loop:
+        - /usr/bin/facter
+        - /usr/bin/puppet
+
+    - name: A link the role created must resolve
+      ansible.builtin.assert:
+        that: puppet_install_target.results[idx].stat.exists
+        fail_msg: >-
+          {{ item.item }} is a symlink to a missing target, which is what a
+          puppet-agent that did not come from Puppet Labs leaves behind.
+        success_msg: "{{ item.item }} resolves"
+      loop: "{{ puppet_install_link.results }}"
+      loop_control:
+        label: "{{ item.item }}"
+        index_var: idx
+      when: item.stat.exists
+
+    - name: Run facter
+      ansible.builtin.command: facter osfamily
+      register: puppet_install_facter_run
+      changed_when: false
+      failed_when: false
+
+    - name: Facter must report an os family
+      ansible.builtin.assert:
+        that:
+          - puppet_install_facter_run.rc == 0
+          - puppet_install_facter_run.stdout | trim | length > 0
+        fail_msg: >-
+          facter did not run (rc={{ puppet_install_facter_run.rc }}).
+          The platforms in this scenario are all supported by Puppet Labs,
+          so the agent and its symlink are both expected to work.
+        success_msg: "facter reports {{ puppet_install_facter_run.stdout | trim }}"
