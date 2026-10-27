@@ -1,11 +1,10 @@
 ---
-# SPDX-FileCopyrightText: 2025 The Linux Foundation
 # SPDX-License-Identifier: Apache-2.0
+# SPDX-FileCopyrightText: 2026 The Linux Foundation
 
-# To get started with Dependabot version updates, you'll need to specify which
-# package ecosystems to update and where the package manifests are located.
-# Please see the documentation for all configuration options:
-# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+# Dependabot keeps GitHub Actions pins (SHA + version comment) and
+# other dependencies current. The cooldown avoids churn from releases
+# that are retracted or superseded shortly after they ship.
 
 version: 2
 updates:
@@ -13,7 +12,23 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    commit-message:
+      prefix: "CI(actions)"
+    cooldown:
+      default-days: 7
+    groups:
+      actions-deps:
+        patterns:
+          - "*"
   - package-ecosystem: "pip"
     directory: "/"
     schedule:
       interval: "weekly"
+    commit-message:
+      prefix: "Chore(pip)"
+    cooldown:
+      default-days: 7
+    groups:
+      pip-deps:
+        patterns:
+          - "*"
