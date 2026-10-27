@@ -2,3 +2,7 @@ ansible>=2.15.0
 ansible-lint>=6.22.0
 molecule>=6.0.0
 molecule-plugins[podman]>=23.5.0
+# Shadow the runner image's apt pyOpenSSL (23.2), which cannot load
+# against a pip installed cryptography and breaks molecule start-up
+# through the ec2 driver's boto3 import (AttributeError: lib.GEN_EMAIL).
+pyopenssl>=24.0
