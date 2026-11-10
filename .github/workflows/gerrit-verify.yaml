@@ -55,7 +55,7 @@ jobs:
     steps:
       - name: Clear votes
         # yamllint disable-line rule:line-length
-        uses: lfreleng-actions/gerrit-review-action@d56b0b5c81402f8cb435aaca513bebdea3be951e # v1.2.0
+        uses: lfreleng-actions/gerrit-review-action@264fe205361cbb2ee8f26280998a75680ee33b53 # v1.3.0
         with:
           host: ${{ vars.LFIT_GERRIT_SERVER }}
           username: ${{ vars.LFIT_GERRIT_SSH_USER }}
@@ -74,7 +74,7 @@ jobs:
     steps:
       - name: Gerrit Checkout
         # yamllint disable-line rule:line-length
-        uses: lfreleng-actions/checkout-gerrit-change-action@35e98c8043ec411611e464e296bcfb441a5c5093 # v1.1.2
+        uses: lfreleng-actions/checkout-gerrit-change-action@7c4a868e1f8e82a27948748eeda306d8e8c117db # v1.3.0
         with:
           gerrit-refspec: ${{ inputs.GERRIT_REFSPEC }}
           gerrit-project: ${{ inputs.GERRIT_PROJECT }}
@@ -96,7 +96,7 @@ jobs:
     steps:
       - name: Gerrit Checkout
         # yamllint disable-line rule:line-length
-        uses: lfreleng-actions/checkout-gerrit-change-action@35e98c8043ec411611e464e296bcfb441a5c5093 # v1.1.2
+        uses: lfreleng-actions/checkout-gerrit-change-action@7c4a868e1f8e82a27948748eeda306d8e8c117db # v1.3.0
         with:
           gerrit-refspec: ${{ inputs.GERRIT_REFSPEC }}
           gerrit-project: ${{ inputs.GERRIT_PROJECT }}
@@ -122,7 +122,7 @@ jobs:
     steps:
       - name: Gerrit Checkout
         # yamllint disable-line rule:line-length
-        uses: lfreleng-actions/checkout-gerrit-change-action@35e98c8043ec411611e464e296bcfb441a5c5093 # v1.1.2
+        uses: lfreleng-actions/checkout-gerrit-change-action@7c4a868e1f8e82a27948748eeda306d8e8c117db # v1.3.0
         with:
           gerrit-refspec: ${{ inputs.GERRIT_REFSPEC }}
           gerrit-project: ${{ inputs.GERRIT_PROJECT }}
@@ -176,7 +176,7 @@ jobs:
           fallback-conclusion: skipped
       - name: Set vote
         # yamllint disable-line rule:line-length
-        uses: lfreleng-actions/gerrit-review-action@d56b0b5c81402f8cb435aaca513bebdea3be951e # v1.2.0
+        uses: lfreleng-actions/gerrit-review-action@264fe205361cbb2ee8f26280998a75680ee33b53 # v1.3.0
         with:
           host: ${{ vars.LFIT_GERRIT_SERVER }}
           username: ${{ vars.LFIT_GERRIT_SSH_USER }}
